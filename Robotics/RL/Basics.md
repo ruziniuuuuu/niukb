@@ -26,9 +26,7 @@ Bellman方程分为两部分：
 1. 状态价值函数V(s)：表示从状态s开始，遵循策略π的期望累计折扣奖励。
 2. 状态转移概率P(s'|s,a)：表示从状态s开始，执行动作a后转移到状态s'的概率。
 
-$$
-V(s) = \sum_{a \in A} \pi(a|s) \sum_{s' \in S} P(s'|s,a) [R(s,a,s') + \gamma V(s')]
-$$
+$$ V(s) = \sum_{a \in A} \pi(a|s) \sum_{s' \in S} P(s'|s,a) [R(s,a,s') + \gamma V(s')] $$
 
 ## Policy Iteration
 
@@ -101,9 +99,7 @@ $$
 
 目标是最大化期望回报：
 
-$$
-J(\theta) = \mathbb{E}_{\tau \sim \pi\theta}[\sum_{t=0}^T R(s_t,a_t)]
-$$
+$$ J(\theta) = \mathbb{E}_{\tau \sim \pi\theta}[\sum_{t=0}^T R(s_t,a_t)] $$
 
 其中$\tau$表示轨迹。
 
@@ -111,15 +107,11 @@ $$
 
 通过对目标函数求导，可以得到策略梯度定理：
 
-$$
-\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[\sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t)Q^{\pi_\theta}(s_t,a_t)]
-$$
+$$ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[\sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t)Q^{\pi_\theta}(s_t,a_t)] $$
 
 简化形式为：
 
-$$
-\nabla_\theta J(\theta) = \mathbb{E}_{s,a}[\nabla\theta \log \pi_\theta(a|s)Q^{\pi}(s,a)]
-$$
+$$ \nabla_\theta J(\theta) = \mathbb{E}_{s,a}[\nabla\theta \log \pi_\theta(a|s)Q^{\pi}(s,a)] $$
 
 ### 优缺点
 
