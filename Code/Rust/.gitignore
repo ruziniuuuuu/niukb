@@ -1,0 +1,28 @@
+# 编译输出目录
+/target/
+
+# Rust生成的文件
+**/*.rs.bk
+
+# 删除Cargo.lock用于库项目
+# 如果是二进制项目，请保留此文件
+Cargo.lock
+
+# IDE和编辑器相关文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 环境变量文件
+.env
+
+# 日志文件
+*.log
+
+# 如果使用了rustfmt，可能会生成的备份文件
+**/*.rs.fmt
